@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<form>
+  <div class="wrapper">
+    <input type="checkbox" id="ck1" onclick="check()"/>
+    <label for="ck1">I</label>
+    <input type="checkbox" id="ck2" onclick="check()"/>
+    <label for="ck2">LOVE</label>
+    <input type="checkbox" id="ck3" onclick="check()"/>
+    <label for="ck3">YOU</label>
+    <span>(Click on words)</span>
+  </div>
+</form>
+
+<script>
+function check() {
+  if (document.getElementById('ck1').checked && 
+      document.getElementById('ck2').checked && 
+      document.getElementById('ck3').checked) {
+    if (!document.querySelector('.wrapper').classList.contains('throb')) {
+      // Do things when all checkboxes are checked
+      document.querySelector('.wrapper').classList.add('throb');
+    }
+  } else {
+    if (document.querySelector('.wrapper').classList.contains('throb')) {
+      // Do things when not all checkboxes are checked
+      document.querySelector('.wrapper').classList.remove('throb');
+    }
+  }
+}
+</script>
+
+</body>
+</html>
